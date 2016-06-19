@@ -1,0 +1,307 @@
+
+/*pagina en general*/
+
+*{
+    margin:0px;
+    padding: 0px;
+}
+
+.fuente{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.center-text{
+    text-align: center;
+}
+body{
+    background-color: #ecf0f1;
+}
+.sombra{	
+    box-shadow: 2px 3px 3px #bdc3c7;
+}
+.border-panel
+{
+    border-radius: 5px;
+}
+.titulo-secciones
+{
+    background-color: white;
+
+    padding: 10px 0px;
+    font-size: 30px
+}
+
+.text-pequeno{
+    font-size: 20px;
+}
+.text-color-white{
+    color: white;
+}
+/*header*/
+.arriba{
+    position: fixed;
+    top: 0;
+    right: 0;
+    float:right;
+    background-color: #fff;
+    margin:0px 50px;
+    padding: 10px;
+
+    border-radius: 0px 0px 5px 5px;
+}
+.arriba a{
+    text-decoration: none;
+    color: #000;
+}
+.banner{
+    background-image: url("../imagenes/banner.jpg");
+    clear: both;
+    width: 1000px;
+    max-width: 100%;
+    height: 300px;
+    margin: 20px auto;
+    margin-bottom: 0px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    overflow: hidden;	
+}
+.imgUFPSH{
+    float:right;
+    margin: 10px;
+}
+.titulo-banner{
+    float:left;
+    font-size: 60px;
+    margin: 10px;
+}
+/*menu*/
+.Menu{
+    margin: 0px;
+    margin: auto;
+    width: 1000px;
+    max-width: 100%;
+    overflow: hidden;
+    background-color:#D60000;
+}
+ul,ol{
+    list-style: none;	
+}
+.nav li a{
+    background-color:#D60000;
+    color: white;
+    text-decoration: none;
+    margin: 0px;
+    padding: 10px;
+    padding-right:30px; 
+    display: block; 
+
+}
+.nav li a:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+.nav > li{
+    float:left;
+}
+
+.nav li ul{
+    display: none;
+    position: absolute;
+    min-width: 140px;
+}
+.nav li:hover>ul{
+    display: block;
+}
+
+.seccion{
+    width: 1000px;
+    margin: 20px auto;
+    overflow: hidden;
+    padding: 0px;
+}
+/*seccion home*/
+.opciones-home	{
+
+    display: inline-block;
+    width: 450px;
+    background-color:#fff;
+    margin: 20px 21px;		
+    border-radius: 10px;
+    overflow: hidden;
+    height: 300px;
+}
+.opciones-home img{
+    margin: 10px;
+    border-radius: 3px;
+}
+.titulo-home{
+    background-color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+}
+.menus-home{
+    width: 200px;
+    float: right;
+    margin: 10px;
+    padding: 0px;
+    border-radius: 5px;
+    background-color: #ecf0f1;
+    box-shadow: 1px 3px 3px #7f8c8d;
+    height: 90%;
+}
+.menus-home ul a{
+    text-decoration: none;
+    padding: 5px;
+    display: block;		
+    border-radius: 5px;
+    font-size: 15px;
+    color: #000;
+}
+.menus-home ul a:hover{
+    background-color: #D60000;
+    color: #fff;
+}
+
+/*seccion-Reg-Animales*/
+.seccion-R-Animal
+{
+    margin-top:20px auto;
+    background-color: #fff;
+
+
+}
+.panel-rojo
+{
+    background-color: #D60000;
+    padding: 10px;
+    margin: 10px;
+}
+.conjunto-registrar
+{
+    width: 700px;
+    margin: 10px auto;
+}
+.conjunto-registrar > table{
+    margin:10px auto;
+}
+.conjunto-eliminar
+{
+
+}
+.tamano-cajas
+{
+    width: 180px;
+    max-width: 100%;
+    margin: 10px 10px;
+}
+.boton{
+    width: 300px;
+    height: 40px;
+    padding: 0px 10px;
+    margin: 10px auto;
+    font-size: 20pt;
+    background: #D60000;
+    border: 0px;
+    color: white;
+    border-radius: 3px;
+    text-shadow:0px 2px 2px #4f4e4e;
+    -moz-text-shadow:0px 2px 2px #4f4e4e;
+    -webkit-text-shadow:0px 2px 2px #4f4e4e;
+}
+.boton:hover
+{
+    background-color: white;
+    color: #000;
+}
+.boton-pequeno
+{
+    width: 200px;
+    height: 30px;
+    padding: 0px 10px;
+    margin: 10px auto;
+    font-size: 15pt;
+    background: #D60000;
+    border: 0px;
+    color: white;
+    border-radius: 3px;
+    text-shadow:0px 2px 2px #4f4e4e;
+    -moz-text-shadow:0px 2px 2px #4f4e4e;
+    -webkit-text-shadow:0px 2px 2px #4f4e4e;
+}
+.boton-pequeno:hover
+{
+    background-color: white;
+    color: #000;
+}
+.tabla-sReportesGestion
+{
+    border-radius: 10px;
+    margin: 20px;
+    background: #ecf0f1;
+}
+.tabla-sReportesGestion-boton
+{
+    width: 300px;
+    height: 40px;
+    padding: 0px 10px;
+    margin: 10px auto;
+    font-size: 15pt;
+    background: #D60000;
+    border: 0px;
+    color: white;
+    border-radius: 3px;
+    text-shadow:0px 2px 2px #4f4e4e;
+    -moz-text-shadow:0px 2px 2px #4f4e4e;
+    -webkit-text-shadow:0px 2px 2px #4f4e4e;
+}
+.tabla-sReportesGestion-boton:hover
+{
+    background-color: white;
+    color: #000;
+}
+.tabla
+{
+    border-radius: 10px;
+    background: #D60000;
+    margin: 10px;
+    width: 600px;
+}
+.titulo-tablas
+{	
+    text-shadow:0px 1px 1px #4f4e4e;
+    -moz-text-shadow:0px 1px 1px #4f4e4e;
+    -webkit-text-shadow:0px 1px 1px #4f4e4e;
+
+}
+.color-filas-pares
+{
+    background-color: #ecf0f1;
+}
+.color-filas-impares
+{
+    background-color: #fff;
+}
+
+.cajas-tablas
+{
+    margin: 0px auto;
+    padding: 5px 30px;
+}
+
+/*footer*/
+.fondoFooter{
+    background-color: #bdc3c7;
+    padding: 30px;
+    clear: both;	
+}
+.fondoFooter nav a{
+    color:#000;
+    margin: 0px 15px ;
+    text-decoration: none;
+
+}
+
+
+

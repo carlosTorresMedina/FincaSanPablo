@@ -1,0 +1,126 @@
+<div class="seccion fuente">
+    <div class="titulo-secciones border-panel center-text sombra">
+        <h1 >Consultar Animales</h1>
+    </div>
+</div>
+
+<div class="seccion seccion-R-Animal border-panel sombra">
+    <form action="ScriptAnimal.php" method="post">
+        <div class="conjunto-registrar">
+            <center>
+                <select class="text-pequeno center-text tamano-cajas" name="especie" onChange="combo(this, 'theinput')">
+
+                    <option >vaca</option>
+                    <option >camuro</option>
+                    <option >equino</option>
+                    <option >vacuno en crecimiento</option>
+
+                </select>
+                <button class="center-text sombra boton-pequeno" type="submit" name="consultar" class="fuente">Consultar</button>	        
+            </center>      
+        </div>
+    </form>
+    <div>
+        <center>
+            <table class="fuente tabla"  border="0" cellspacing="0">
+                <tr class="titulo-tablas text-color-white">
+                    <td class="cajas-tablas">
+                <center>
+                    <label class="text-pequeno">ID Animal</label>
+                </center>
+                </td>
+                <td class="cajas-tablas">
+                <center>
+                    <label class="text-pequeno">Peso (Kgs)</label>
+                </center>
+                </td>
+                <td class="cajas-tablas">
+                <center>
+                    <label class="text-pequeno">Tamaño (m)</label>
+                </center>
+                </td>
+                <td class="cajas-tablas">
+                <center>
+                    <label class="text-pequeno">Sexo</label>
+                </center>
+                </td>
+                <td class="cajas-tablas">
+                <center>
+                    <label class="text-pequeno">Medicamento</label>
+                </center>
+                </td>
+                <?php if($ts1!=null): ?>
+                <td class='cajas-tablas'>
+                <center> <label class='text-pequeno'>Estado en el Proceso</label> </center></td>
+                <?php endif; ?>
+                </tr>
+
+                <?php if($ts1!=null): ?>
+                <?php foreach($ts1 as $data1): ?>
+                <tr class="color-filas-impares">
+
+                    <?php 
+                    $v=$data1[0];
+                    $e=$data1[1];
+                    ?>
+                    <td><center>
+                    <label class="text-pequeno"><?php echo $v['id']; ?></label>
+                </center>
+                </td>
+                <td><center>
+                    <label class="text-pequeno"><?php echo $v['peso']; ?></label>
+                </center>
+                </td>
+                <td><center>
+                    <label class="text-pequeno"><?php echo $v['tamano']; ?></label>
+                </center>
+                </td>
+                <td><center>
+                    <label class="text-pequeno"><?php if($v['sexo']==1){echo 'macho'; }else{ echo 'hembra';} ?></label>
+                </center>
+                </td>
+                <td><center>
+                    <label class="text-pequeno"><?php echo $v['medicamento']; ?></label>
+                </center>
+                </td>
+                <td><center>
+                    <label class="text-pequeno"><?php echo $e['ESTADO']; ?></label>
+                </center>
+                </td>
+                </tr>
+                <?php endforeach; ?>
+                <?php elseif($ts!=null): ?>
+
+                <?php  foreach ($ts as $data): ?>   
+                <tr class="color-filas-impares">
+
+                    <td><center>
+                    <label class="text-pequeno"><?php echo $data['id']; ?></label>
+                </center>
+                </td>
+                <td><center>
+                    <label class="text-pequeno"><?php echo $data['peso']; ?></label>
+                </center>
+                </td>
+                <td><center>
+                    <label class="text-pequeno"><?php echo $data['tamano']; ?></label>
+                </center>
+                </td>
+                <td><center>
+                    <label class="text-pequeno"><?php if($data['sexo']==1){echo 'macho'; }else{ echo 'hembra';} ?></label>
+                </center>
+                </td>
+                <td><center>
+                    <label class="text-pequeno"><?php echo $data['medicamento']; ?></label>
+                </center>
+                </td>
+
+                </tr>	
+                <?php endforeach; ?>
+                <?php endif; ?>
+            </table>
+        </center>
+
+    </div>
+
+</div>

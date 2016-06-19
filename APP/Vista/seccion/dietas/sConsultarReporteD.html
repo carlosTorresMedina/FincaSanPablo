@@ -1,0 +1,105 @@
+<section>
+    <div class="seccion fuente">
+        <div class="titulo-secciones border-panel center-text sombra">
+            <h1>Consultar Reporte de Dietas</h1>
+        </div>
+        <div class="seccion seccion-R-Animal border-panel sombra">
+            <center>
+                <form action="ScriptDieta.php" method="post">
+                    <table>
+                        <tr>
+                            <td>
+                                <label class="text-pequeno  tamano-cajas">Dieta</label>
+                            </td>
+                            <td>
+                                <select class="text-pequeno center-text tamano-cajas" name="dieta" onChange="combo(this, 'theinput')">
+                                    <?php foreach ($ts as $data):  ?>  
+                                    <option ><?php echo $data['ID_DIETA']; ?></option>
+                                    <?php  endforeach; ?> 
+
+
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="text-pequeno  tamano-cajas">Desde</label>
+                            </td>
+                            <td>
+                                <input type="date" class="text-pequeno center-text tamano-cajas" name="desde" onChange="combo(this, 'theinput')"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="text-pequeno  tamano-cajas">Hasta</label>
+                            </td>
+                            <td>
+                                <input type="date" class="text-pequeno center-text tamano-cajas" name="hasta" onChange="combo(this, 'theinput')"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <button class="center-text sombra boton-pequeno" type="submit" name="consultar" class="fuente">Consultar</button>
+                </form>
+                <table class="fuente tabla" border="0" cellspacing="0">
+                    <tr class="titulo-tablas text-color-white">
+                        <td class="cajas-tablas">
+                    <center>
+                        <label class="text-pequeno">Fecha</label>
+                    </center>
+                    </td>
+
+                    <td class="cajas-tablas">
+                    <center>
+                        <label class="text-pequeno">Especie</label>
+                    </center>
+                    </td>
+                    <td class="cajas-tablas">
+                    <center>
+                        <label class="text-pequeno">Dieta</label>
+                    </center>
+                    </td>
+                    </tr>
+                    <?php if($ts1==null): ?>
+                    <tr class="color-filas-impares">
+
+                        <td><center>
+                        <label class="text-pequeno"></label>
+                    </center>
+                    </td>
+                    <td><center>
+                        <label class="text-pequeno"></label>
+                    </center>
+                    </td>
+                    <td><center>
+                        <label class="text-pequeno"></label>
+                    </center>
+                    </td>
+
+
+                    </tr>
+                    <?php else: ?>
+                    <?php  foreach ($ts1 as $data): ?>   
+                    <tr class="color-filas-impares">
+
+                        <td><center>
+                        <label class="text-pequeno"><?php echo $data['FECHA']; ?></label>
+                    </center>
+                    </td>
+                    <td><center>
+                        <label class="text-pequeno"><?php echo $data['FK_TIPO_ANIMAL']; ?></label>
+                    </center>
+                    </td>
+                    <td><center>
+                        <label class="text-pequeno"><?php echo $data['FK_ID_DIETA']; ?></label>
+                    </center>
+                    </td>
+
+
+                    </tr>	
+                    <?php endforeach; ?>
+                    <?php endif; ?>
+                </table>
+            </center>
+        </div>
+    </div>
+</section>

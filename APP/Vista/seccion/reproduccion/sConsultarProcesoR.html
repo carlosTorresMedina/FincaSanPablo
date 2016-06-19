@@ -1,0 +1,122 @@
+<section>
+    <div class="seccion fuente">
+        <div class="titulo-secciones border-panel center-text sombra">
+            <h1>Consultar Procesos</h1>
+        </div>
+        <div class="seccion seccion-R-Animal border-panel sombra">
+            <center>
+                <form action="ScriptReproduccion.php" method="post">
+                    <div class="border-panel conjunto-registrar">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label class="text-pequeno  tamano-cajas">Vaca</label>
+                                </td>
+                                <td>
+                                    <select class="text-pequeno center-text tamano-cajas" name="vaca" onChange="combo(this, 'theinput')">
+                                        <?php foreach ($ts as $data1): ?>     
+                                        <option ><?php echo $data1['id']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </td>
+                            </tr>              
+                        </table>     
+                    </div>
+                    <div>
+                        <center>
+                            <button class="center-text sombra boton-pequeno" type="submit" name="consultar" class="fuente">Consultar</button>
+                        </center>
+                    </div>
+                </form>
+                <table class="fuente tabla" border="0" cellspacing="0">
+                    <tr class="titulo-tablas text-color-white">
+                        <td class="cajas-tablas">
+                    <center>
+                        <label class="text-pequeno">ID Animal</label>
+                    </center>
+                    </td>
+                    <td class="cajas-tablas">
+                    <center>
+                        <label class="text-pequeno">Fecha de Inseminación</label>
+                    </center>
+                    </td>
+                    <td class="cajas-tablas">
+                    <center>
+                        <label class="text-pequeno">Fecha de parto</label>
+                    </center>
+                    </td>
+                    <td class="cajas-tablas">
+                    <center>
+                        <label class="text-pequeno">Fecha de inicio de descanso</label>
+                    </center>
+                    </td>
+                    <td class="cajas-tablas">
+                    <center>
+                        <label class="text-pequeno">Fecha de fin de descanso</label>
+                    </center>
+                    </td>
+                    </tr>
+                    <?php if ($ts1 == null): ?>
+                    <tr class="color-filas-impares">
+                        <td >
+                    <center>
+                        <label class="text-pequeno"></label>
+                    </center>
+                    </td>
+                    <td>
+                    <center>
+                        <label class="text-pequeno"></label>
+                    </center>
+                    </td>
+                    <td>
+                    <center>
+                        <label class="text-pequeno"></label>
+                    </center>
+                    </td>
+                    <td>
+                    <center>
+                        <label class="text-pequeno"></label>
+                    </center>
+                    </td>
+                    <td>
+                    <center>
+                        <label class="text-pequeno"></label>
+                    </center>
+                    </td>
+                    </tr>
+                    <?php else: ?>
+                    <?php  foreach ($ts1 as $data): ?>
+                    <tr class="color-filas-impares">
+                        <td >
+                    <center>
+                        <label class="text-pequeno"> <?php  echo $data['PK_ID_ANIMAL'] ?></label>
+                    </center>
+                    </td>
+                    <td>
+                    <center>
+                        <label class="text-pequeno"><?php  echo $data['PK_FECHA_INSEMINACION'] ?></label>
+                    </center>
+                    </td>
+                    <td>
+                    <center>
+                        <label class="text-pequeno"><?php  echo $data['FECHA_DE_PARTO'] ?></label>
+                    </center>
+                    </td>
+                    <td>
+                    <center>
+                        <label class="text-pequeno"><?php  echo $data['INICIO_DESCANSO'] ?></label>
+                    </center>
+                    </td>
+                    <td>
+                    <center>
+                        <label class="text-pequeno"><?php  echo $data['FIN_DESCANSO'] ?></label>
+                    </center>
+                    </td>
+                    </tr>
+                    <?php endforeach; ?>
+                    <?php endif; ?> 
+                </table>
+            </center>
+        </div>
+    </div>
+</section>

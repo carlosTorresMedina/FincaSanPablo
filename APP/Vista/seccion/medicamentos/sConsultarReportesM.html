@@ -1,0 +1,115 @@
+<section>
+    <div class="seccion fuente">
+        <div class="titulo-secciones border-panel center-text sombra">
+            <h1 >Consultar Reportes de Medicamento</h1>
+        </div>
+    </div>
+    <div class="seccion seccion-R-Animal border-panel sombra fuente">
+        <form action="ScriptMedicamento.php" method="post">
+            <center>  
+                <table>
+                    <tr>
+                        <td>
+                            <label class="text-pequeno">Medicamento</label>
+                        </td>
+                        <td>
+                            <select class="text-pequeno center-text tamano-cajas" name="medicamento" onChange="combo(this, 'theinput')">            
+                                <?php foreach ($ts as $data1): ?>     
+                                <option ><?php echo $data1['nombre']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Desde</label>
+                        </td>
+                        <td>
+                            <input type="date" class="text-pequeno center-text tamano-cajas" name="desde" onChange="combo(this, 'theinput')"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Hasta</label>
+                        </td>
+                        <td>
+                            <input type="date" class="text-pequeno center-text tamano-cajas" name="hasta" onChange="combo(this, 'theinput')"/>
+                        </td>
+                    </tr>	                    
+                </table>           
+                <button class="center-text sombra boton-pequeno" type="submit" name="CReporteMedicamento" class="fuente">Consultar</button> 
+            </center>
+        </form>
+        <center>
+            <table class="fuente tabla" border="0" cellspacing="0">
+                <tr class="titulo-tablas text-color-white">
+                    <td class="cajas-tablas">
+                <center>
+                    <label class="text-pequeno">Fecha</label>
+                </center>
+                </td>
+                <td class="cajas-tablas">
+                <center>
+                    <label class="text-pequeno">Medicamento</label>
+                </center>
+                </td>
+                <td class="cajas-tablas">
+                <center>
+                    <label class="text-pequeno">Cantidad Gastada</label>
+                </center>
+                </td>
+                <td class="cajas-tablas">
+                <center>
+                    <label class="text-pequeno">Responsable</label>
+                </center>
+                </td>
+                </tr>
+                <?php if ($ts1 == null): ?>
+                <tr class="color-filas-impares">
+
+                    <td><center>
+                    <label class="text-pequeno"></label>
+                </center>
+                </td>
+                <td><center>
+                    <label class="text-pequeno"></label>
+                </center>
+                </td>
+                <td><center>
+                    <label class="text-pequeno"></label>
+                </center>
+                </td>
+                <td><center>
+                    <label class="text-pequeno"></label>
+                </center>
+                </td>
+
+                </tr>	
+                <?php else: ?>
+                <?php  foreach ($ts1 as $data): ?>   
+                <tr class="color-filas-impares">
+
+                    <td><center>
+                    <label class="text-pequeno"><?php echo $data['fecha']; ?></label>
+                </center>
+                </td>
+                <td><center>
+                    <label class="text-pequeno"><?php echo $data['FK_NOMBRE_MEDICAMENTO']; ?></label>
+                </center>
+                </td>
+                <td><center>
+                    <label class="text-pequeno"><?php echo $data['cantidad_utilizada']; ?></label>
+                </center>
+                </td>
+                <td><center>
+                    <label class="text-pequeno"><?php echo $data['responsable']; ?></label>
+                </center>
+                </td>
+
+                </tr>	
+                <?php endforeach; ?>
+                <?php endif; ?>  
+            </table>
+        </center>
+    </div>
+</section>

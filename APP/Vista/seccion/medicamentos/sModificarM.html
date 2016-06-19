@@ -1,0 +1,107 @@
+<section>
+    <div class="seccion fuente">
+        <div class="titulo-secciones border-panel center-text sombra">
+            <h1 >Modificar Medicamentos</h1>
+        </div>
+    </div>
+    <div class="seccion seccion-R-Animal border-panel sombra">
+        <div class="conjunto-registrar">
+            <form  action="ScriptMedicamento.php" method="post">
+                <center>	            
+                    <select class="text-pequeno center-text tamano-cajas" name="medicamento" onChange="combo(this, 'theinput')">
+                        <?php if ($ts == null): ?>
+                        <option >ninguno</option>
+                        <?php else: ?>
+                        <?php foreach ($ts as $data1): ?>     
+                        <option ><?php echo $data1['nombre']; ?></option>
+                        <?php endforeach; ?>
+                        <?php endif; ?>                        
+                    </select>
+                    <button class="center-text sombra boton-pequeno" type="submit" name="buscar" class="fuente">Consultar</button>	      
+                </center>   
+            </form>
+        </div>
+        <div>
+            <center>
+                <form action="ScriptMedicamento.php" method="post">   
+                    <div class="border-panel conjunto-registrar fuente">                  
+                        <table>
+                            <?php if ($ts1 == null): ?>
+                            <tr>
+                                <td>
+                                    <label class="text-pequeno  tamano-cajas">Medicamento</label>
+                                </td>
+                                <td>
+                                    <input type="hidden" name="nombre" class="text-pequeno center-text tamano-cajas" /> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="text-pequeno tamano-cajas">Cantidad Existente</label>
+                                </td>
+                                <td>
+                                    <input type="number" name="cExistente" maxlength="4" class="text-pequeno center-text tamano-cajas" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="text-pequeno tamano-cajas">Cantidad Utilizada</label>
+                                </td>
+                                <td>
+                                    <input type="number" name="cUtilizada" maxlength="4" class="text-pequeno center-text tamano-cajas"  />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="text-pequeno tamano-cajas">Nomeclatura</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="nomenclatura" maxlength="4" class="text-pequeno center-text tamano-cajas"  />
+                                </td>
+                            </tr>       
+                            <?php else: ?>
+                            <?php foreach ($ts1 as $data): ?>                           
+                            <tr>
+                                <td>
+                                    <label class="text-pequeno  tamano-cajas">Medicamento</label>
+                                </td>
+                                <td>
+                                    <input type="hidden" name="nombre" class="text-pequeno center-text tamano-cajas" value='<?php echo $data["nombre"]; ?>'> <?php echo $data['nombre']; ?></input>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="text-pequeno tamano-cajas">Cantidad Existente</label>
+                                </td>
+                                <td>
+                                    <input type="number" name="cExistente" maxlength="4" class="text-pequeno center-text tamano-cajas" value='<?php echo $data["cantida_existente"]; ?>'/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="text-pequeno tamano-cajas">Cantidad Utilizada</label>
+                                </td>
+                                <td>
+                                    <input type="number" name="cUtilizada" maxlength="4" class="text-pequeno center-text tamano-cajas" value='<?php echo $data["cantidad_utilizada"]; ?>' />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="text-pequeno tamano-cajas">Nomeclatura</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="nomenclatura" maxlength="4" class="text-pequeno center-text tamano-cajas" value='<?php echo $data["nomenclatura"]; ?>' />
+                                </td>
+                            </tr>       
+                            <?php endforeach; ?>
+                            <?php endif; ?>  
+
+                        </table>                 
+                    </div>
+
+                    <button class="center-text sombra boton" type="submit" name="modificar" class="fuente">Modificar</button>
+                </form>
+            </center>
+        </div>
+    </div>
+</section>

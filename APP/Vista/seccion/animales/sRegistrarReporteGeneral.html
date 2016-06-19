@@ -1,0 +1,63 @@
+<section>
+    <div class="seccion fuente">
+        <div class="titulo-secciones border-panel center-text sombra">
+            <h1 >Registrar Reporte General</h1>
+        </div>
+        <div class="seccion seccion-R-Animal border-panel sombra">
+            <form action="ScriptAnimal.php" method="post">
+                <div class="border-panel conjunto-registrar">
+                    <table class="tabla" cellspacing="0">
+                        <tr class="titulo-tablas text-color-white">
+                            <td class="cajas-tablas">
+                                <label class="text-pequeno  tamano-cajas">Especie</label>
+                            </td>
+                            <td class="cajas-tablas">
+                                <label class="text-pequeno  tamano-cajas">Cantidad</label>
+                            </td>
+                        </tr>
+                        <tr class="color-filas-pares">
+                            <td>
+                                <label class="text-pequeno  tamano-cajas">Vaca</label>
+                            </td>
+                            <td>
+                                <input type="hidden" name="vaca"  class="text-pequeno center-text tamano-cajas" value="<?php echo $vaca['cantidad']; ?>" /><?php echo $vaca['cantidad']; ?>
+                            </td>
+                        </tr>
+                        <tr class="color-filas-impares">
+                            <td>
+                                <label class="text-pequeno  tamano-cajas">Camuro</label>
+                            </td>
+                            <td>
+                                <input type="hidden"name="camuro" class="text-pequeno center-text tamano-cajas" value="<?php echo $camuro['cantidad']; ?>" /><?php echo $camuro['cantidad']; ?>
+                            </td>
+                        </tr>
+                        <tr class="color-filas-pares">
+                            <td>
+                                <label class="text-pequeno  tamano-cajas">Equino</label>
+                            </td>
+                            <td>
+                                <input type="hidden"name="equino" class="text-pequeno center-text tamano-cajas" value="<?php echo $equino['cantidad']; ?>" /><?php echo $equino['cantidad']; ?>
+                            </td>
+                        </tr>
+                        <tr class="color-filas-impares">
+                            <td>
+                                <label class="text-pequeno  tamano-cajas">Vacuno en crecimiento</label>
+                            </td>
+                            <td>
+                                <input type="hidden" name="vacuno" class="text-pequeno center-text tamano-cajas" value="<?php echo $vacuno['cantidad']; ?>" /><?php echo $vacuno['cantidad']; ?>
+                            </td>
+                        </tr>
+                    </table>                			
+                </div>
+                <div>
+                    <center>
+                        <TEXTAREA rows=10 cols=70 NAME="descripcion">Ingrese Observación</TEXTAREA>
+	                </center>
+                </div>
+                <center>
+                    <button class="center-text sombra boton" type="submit" name="registrarReporteGeneral" class="fuente">Registrar</button>
+                </center>
+            </form>
+        </div>
+    </div>
+</section>

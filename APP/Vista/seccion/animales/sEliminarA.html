@@ -1,0 +1,83 @@
+<div class="seccion fuente">
+    <div class="titulo-secciones border-panel center-text sombra">
+        <h1 >Eliminar Animales</h1>
+    </div>
+</div>
+<div class="seccion seccion-R-Animal border-panel sombra">
+    <form action="ScriptAnimal.php" method="post" >
+        <div class="conjunto-registrar">
+            <center>
+                <input type="text" name="idAnimal" class="text-pequeno center-text tamano-cajas" placeholder="ID Animal"/>
+                <select class="text-pequeno center-text tamano-cajas" name="especie" onChange="combo(this, 'theinput')">
+
+                    <option >vaca</option>
+                    <option >camuro</option>
+                    <option >equino</option>
+                    <option >vacuno en crecimiento</option>
+                </select>
+
+                <button class="center-text sombra boton-pequeno" type="submit" name="buscar" class="fuente">Consultar</button>	      
+            </center>      
+        </div>
+    </form>
+    <div>
+        <form action="ScriptAnimal.php" method="post">
+            <center>
+                <table class="fuente tabla" border="0" cellspacing="0">
+                    <tr class="titulo-tablas text-color-white">
+                        <td class="cajas-tablas">
+                    <center>
+                        <label class="text-pequeno" >ID Animal</label>
+                    </center>
+                    </td>
+                    <td class="cajas-tablas">
+                    <center>
+                        <label class="text-pequeno">Peso (Kgs)</label>
+                    </center>
+                    </td>
+                    <td class="cajas-tablas">
+                    <center>
+                        <label class="text-pequeno">Tamaño (m)</label>
+                    </center>
+                    </td>
+                    <td class="cajas-tablas">
+                    <center>
+                        <label class="text-pequeno">Sexo</label>
+                    </center>
+                    </td>
+                    <td class="cajas-tablas">
+                    <center>
+                        <label class="text-pequeno">Medicamento</label>
+                    </center>
+                    </td>
+                    </tr>
+                    <tr class="color-filas-impares">
+                        <?php  foreach ($ts as $data): ?>                                                              
+                        <td><center>
+                        <input type="hidden" name="idAnimal" class="text-pequeno center-text tamano-cajas" value='<?php echo $data["id"]; ?>' /> <?php echo $data['id']; ?></input>
+                    </center>
+                    </td>
+                    <td><center>
+                        <label class="text-pequeno"><?php echo $data["peso"]; ?></label>
+                    </center>
+                    </td>
+                    <td><center>
+                        <label class="text-pequeno"><?php echo $data['tamano']; ?></label>
+                    </center>
+                    </td>
+                    <td><center>
+                        <label class="text-pequeno"><?php if($data['sexo']==1){echo 'macho'; }else{ echo 'hembra';} ?></label>
+                    </center>
+                    </td>
+                    <td><center>
+                        <label class="text-pequeno"><?php echo $data['medicamento']; ?></label>
+                    </center>
+                    </td>
+                    <?php endforeach; ?>
+                    </tr>
+                </table>
+                <button class="center-text sombra boton" type="submit" name="eliminar" class="fuente">Eliminar</button>
+            </center>
+        </form>
+    </div>
+</div>

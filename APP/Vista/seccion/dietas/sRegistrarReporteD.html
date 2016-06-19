@@ -1,0 +1,46 @@
+<section>
+    <div class="seccion fuente">
+        <div class="titulo-secciones border-panel center-text sombra">
+            <h1>Registrar Reporte de Dietas</h1>
+        </div>
+        <div class="seccion seccion-R-Animal border-panel sombra">
+            <form action="ScriptDieta.php" method="post">
+                <center>
+                    <table>
+                        <tr>
+                            <td>
+                                <label class="text-pequeno">Tipo animal</label>
+                            </td>	 
+                            <td>
+                                <select class="text-pequeno center-text tamano-cajas" name="animal" onChange="combo(this, 'theinput')">                                    
+                                    <option >vaca</option>
+                                    <option >camuro</option>
+                                    <option >equino</option>
+                                    <option >vacuno en crecimiento</option>
+                                </select>
+
+                            </td>                                        
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label class="text-pequeno">Dieta</label>
+                            </td>
+
+                            <td>
+                                <select class="text-pequeno center-text tamano-cajas" name="dieta" onChange="combo(this, 'theinput')">
+                                    <?php foreach ($ts as $data):  ?>  
+                                    <option ><?php echo $data['ID_DIETA']; ?></option>
+                                    <?php  endforeach; ?> 
+                                </select>
+                            </td>
+                        </tr>
+
+
+                    </table>
+                    <button class="center-text sombra boton" type="submit" name="registrarReporte" class="fuente">Registrar</button>
+                </center>
+            </form>
+       	</div>
+    </div>
+</section>

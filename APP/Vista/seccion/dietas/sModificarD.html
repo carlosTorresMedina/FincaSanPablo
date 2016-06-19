@@ -1,0 +1,53 @@
+<section>
+    <div class="seccion fuente">
+        <div class="titulo-secciones border-panel center-text sombra">
+            <h1>Modificar Dieta</h1>
+        </div>
+        <div class="seccion seccion-R-Animal border-panel sombra">
+            <center>     
+                <form action="ScriptDieta.php" method="post">
+
+                    <div class="border-panel conjunto-registrar">
+                        <select class="text-pequeno center-text tamano-cajas" name="dieta" onChange="combo(this, 'theinput')">
+                            <?php foreach ($ts as $data1): ?>     
+                            <option ><?php echo $data1['ID_DIETA']; ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                        <button class="center-text sombra boton-pequeno" type="submit" name="buscarModificar" class="fuente">Consultar</button>
+                    </div>
+                </form>
+                <form action="ScriptDieta.php" method="post">
+
+                    <table>
+                        <?php if ($ts1 == null): ?>
+
+                        <td>
+                            <label class="text-pequeno tamano-cajas">Descripción</label>
+                        </td>
+                        <td>
+                            <textarea class="tamano-cajas" rows="5" cols="10"name="descripcion">                              	
+                            </textarea>
+                        </td>   
+                        <?php else: ?>
+                        <?php  foreach ($ts1 as $data): ?>
+                        <tr>
+                            <td> <label class="text-pequeno tamano-cajas">Nombre dieta</label></td>
+                            <td > <input  class="text-pequeno tamano-cajas" type="hidden" name="dieta" class="text-pequeno center-text tamano-cajas" value='<?php echo $data["ID_DIETA"]; ?>'><?php echo $data["ID_DIETA"]; ?></td>
+                        </tr>
+                        <td>
+                            <label class="text-pequeno tamano-cajas">Descripción</label>
+                        </td>
+                        <td>
+
+                            <TEXTAREA COLS=20 ROWS=10 name="descripcion" value="" ><?php  echo $data['DESCRIPCION']; ?></TEXTAREA> 
+	                      
+	                    </td>
+                            <?php endforeach ?>
+                        <?php endif; ?>  
+	                 </table> 
+	            <button class="center-text sombra boton" type="submit" name="modificar" class="fuente">Modificar</button>
+            </center>
+        </form>
+        </div>
+    </div>
+</section>

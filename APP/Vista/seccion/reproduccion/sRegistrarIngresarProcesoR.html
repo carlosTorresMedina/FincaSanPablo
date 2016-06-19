@@ -1,0 +1,37 @@
+<section>
+    <div class="seccion fuente">
+        <div class="titulo-secciones border-panel center-text sombra">
+            <h1>Ingresar en el proceso de reproducción</h1>
+        </div>
+        <div class="seccion seccion-R-Animal border-panel sombra">
+            <center>
+                <form action="ScriptReproduccion.php" method="post">
+                    <div class="border-panel conjunto-registrar">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label class="text-pequeno  tamano-cajas">Vaca</label>
+                                </td>
+                                <td>
+                                    <select class="text-pequeno center-text tamano-cajas" name="vaca" onChange="combo(this, 'theinput')">
+                                        <option >ninguno</option>	                
+                                        <?php foreach ($ts as $data1): ?>     
+                                        <option ><?php echo $data1['ID']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </td>
+                            </tr>                     
+                        </table>                 
+
+
+                    </div>
+                    <div>
+                        <center>
+                            <button class="center-text sombra boton" type="submit" name="ingresar" class="fuente">Ingresar</button>
+                        </center>
+                    </div>
+                </form>
+            </center>
+        </div>
+    </div>
+</section>

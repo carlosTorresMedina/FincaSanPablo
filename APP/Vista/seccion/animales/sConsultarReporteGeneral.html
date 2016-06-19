@@ -1,0 +1,89 @@
+<section>
+    <div class="seccion fuente">
+        <div class="titulo-secciones border-panel center-text sombra">
+            <h1 >Consultar Reporte General</h1>
+        </div>
+        <div class="seccion seccion-R-Animal border-panel sombra">
+
+            <div class="border-panel conjunto-registrar">
+                <center>
+                    <form action="ScriptAnimal.php" method="post">
+                        <label class="text-pequeno">Escoja un rango de fecha</label>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label>Desde</label>
+                                </td>
+                                <td>
+                                    <input type="date" class="text-pequeno center-text tamano-cajas" name="desde" onChange="combo(this, 'theinput')"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Hasta</label>
+                                </td>
+                                <td>
+                                    <input type="date" class="text-pequeno center-text tamano-cajas" name="hasta" onChange="combo(this, 'theinput')"/>
+                                </td>
+                            </tr>
+
+
+                        </table>
+                        <center>
+                            <button class="center-text sombra boton-pequeno" type="submit" name="consultarReporteGeneral" class="fuente">Consultar</button> 
+                        </center>
+                    </form>
+                </center>
+                <?php if($ts!=null): ?>
+                <?php foreach($ts as $data): ?>
+                <?php $general=$data[0]; ?>  
+                <h1><?php  echo $general['PK_FECHA']; ?></h1> 
+                <table class="tabla" cellspacing="0">
+                    <tr class="titulo-tablas text-color-white">
+                        <td class="cajas-tablas">
+                            <label class="text-pequeno  tamano-cajas">ID Animal</label>
+                        </td>
+                        <td class="cajas-tablas">
+                            <label class="text-pequeno  tamano-cajas">Cantidad</label>
+                        </td>
+
+                    </tr>
+                    <?php 
+                    $i=true;
+                    foreach($data[1] as $data1): ?>
+                    <?php if($i): ?>
+                    <tr class="color-filas-impares">
+                        <td>
+                            <label class="text-pequeno  tamano-cajas"><?php echo  $data1['PK_TIPO'] ?></label>
+                        </td>
+                        <td>
+                            <label class="text-pequeno  tamano-cajas"><?php echo $data1['CANTIDAD'] ?></label>
+                        </td>
+
+                    </tr>
+
+                    <?php else: ?>
+                    <tr class="color-filas-pares">
+                        <td>
+                            <label class="text-pequeno  tamano-cajas"><?php echo $data1['PK_TIPO'] ?></label>
+                        </td>
+                        <td>
+                            <label class="text-pequeno  tamano-cajas"><?php echo $data1['CANTIDAD'] ?></label>
+                        </td>
+
+                    </tr>
+
+                    <?php endif; ?>
+                    <?php $i=!$i; ?>
+                    <?php endforeach; ?>
+                </table> 
+                <center>
+                    <TEXTAREA rows=6 cols=70 NAME="descripcion" disabled><?php echo $general['OBSERVACIONES']; ?></TEXTAREA>
+	                </center>    
+<?php endforeach; ?> 
+<?php endif ?>
+                </div>
+           
+        </div>
+    </div>
+</section>

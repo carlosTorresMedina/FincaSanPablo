@@ -1,0 +1,103 @@
+<section>
+    <div class="seccion fuente">
+        <div class="titulo-secciones border-panel center-text sombra">
+            <h1 >Modificar Animales</h1>
+        </div>
+    </div>
+
+
+
+    <div class="seccion seccion-R-Animal border-panel sombra">
+        <div class="conjunto-registrar">
+            <form action="ScriptAnimal.php" method="post" >
+
+                <center>
+                    <input type="text" name="idAnimal" class="text-pequeno center-text tamano-cajas" placeholder="ID Animal"/>
+                    <select class="text-pequeno center-text tamano-cajas" name="especie" onChange="combo(this, 'theinput')">
+
+                        <option >vaca</option>
+                        <option >camuro</option>
+                        <option >equino</option>
+                        <option >vacuno en crecimiento</option>
+                    </select>
+                    <button class="center-text sombra boton-pequeno" type="submit" name="buscarModificar" class="fuente">Consultar</button>	      
+                </center> 
+            </form>
+        </div>
+        <div>
+            <center>
+                <form action="ScriptAnimal.php" method="post">
+                    <div class="border-panel conjunto-registrar fuente">
+
+                        <table>
+                            <?php  foreach ($ts as $data): ?> 
+
+                            <tr>
+                                <td>
+                                    <label class="text-pequeno tamano-cajas">ID animal</label>
+                                </td>
+                                <td>
+                                    <input type="hidden" name="idAnimal" class="text-pequeno center-text tamano-cajas" value='<?php echo $data["id"]; ?>'> <?php echo $data['id']; ?></input>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="text-pequeno tamano-cajas">Tamaño</label>
+                                </td>
+                                <td>
+                                    <input type="number" step="0.1" name="Tamano" maxlength="4" class="text-pequeno center-text tamano-cajas" value='<?php echo $data["tamano"]; ?>' />
+                                    <label class="text-pequeno tamano-cajas">m</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="text-pequeno tamano-cajas">Peso</label>
+                                </td>
+                                <td>
+                                    <input type="number" step="0.1" name="Peso" maxlength="4" class="text-pequeno center-text tamano-cajas" value='<?php echo $data["peso"]; ?>' />
+                                    <label class="text-pequeno tamano-cajas">kgs</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="text-pequeno tamano-cajas">Sexo</label>
+                                </td>
+                                <td>
+                                    <select class="text-pequeno center-text tamano-cajas" name="sexo" onChange="combo(this, 'theinput')">
+                                        <?php echo $data['id']; ?>
+
+
+                                        <option ><?php if($data['sexo']==1){echo 'macho'; }else{ echo 'hembra';} ?></option>
+                                        <option ><?php if($data['sexo']==1){echo 'hembra'; }else{ echo 'macho';} ?></option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="text-pequeno tamano-cajas">Medicamento</label>
+                                </td>
+                                <td>
+                                    <select class="text-pequeno center-text tamano-cajas" name="medicamento" onChange="combo(this, 'theinput')">
+                                        <option ><?php echo $data['medicamento']; ?></option>
+                                        <?php foreach ($ts2 as $data1): 
+                                        if($data1['nombre']!=$data['medicamento']){
+                                        echo "<option >".$data1['nombre']."</option>" ;  
+                                        } ?> 
+                                        <?php endforeach; ?>
+                                    </select>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </table>      
+
+                    </div>
+                    <button class="center-text sombra boton" type="submit" name="modificar" class="fuente">Modificar</button>
+                </form>
+
+            </center>
+        </div>
+
+    </div>
+
+
+

@@ -1,0 +1,80 @@
+*{
+    margin:0px;
+    padding: 0px;
+}
+body{
+    background: #bdc3c7;
+    background-image: url("../imagenes/fondo.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -mox-background-size: cover;
+    -webkit-background-size: cover;
+}
+.cuadro{
+    background-color: rgba(236,240,241,0.7);
+    width: 360px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin: 75px auto;
+}
+.interno{
+    background: #cf0f0f;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+div h1{
+    /*	text-align: center;*/	
+    font-weight: normal;
+    margin:20px;
+    padding-top: 30px;
+    font-size: 45px;
+}
+form input{
+    width: 280px;
+    height: 35px;
+    padding: 0px 10px;
+    margin: 10px auto;
+    color: #7f8c8d;
+    /*	text-align: center;*/
+    font-size: 15pt;
+}
+form button{
+    width: 300px;
+    height: 40px;
+    padding: 0px 10px;
+    margin: 10px auto;
+    font-size: 20pt;
+    background: #bdc3c7;
+    border: 0px;
+    color: white;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px #4f4e4e;
+    -moz-box-shadow: 2px 2px 2px #4f4e4e;
+    -webkit-box-shadow: 2px 2px 2px #4f4e4e;
+    text-shadow:0px 2px 2px #4f4e4e;
+    -moz-text-shadow:0px 2px 2px #4f4e4e;
+    -webkit-text-shadow:0px 2px 2px #4f4e4e;
+}
+form button:hover{
+    background: #ecf0f1;
+    color: black;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    text-shadow:none;
+    -moz-text-shadow:none;
+    -webkit-text-shadow:none;
+}
+.fuente{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+img{
+    margin: 10px auto;
+}
+.center-text{
+    text-align: center;
+}

@@ -1,0 +1,69 @@
+<section>
+    <div class="seccion fuente">
+        <div class="titulo-secciones border-panel center-text sombra">
+            <h1>Eliminar Dieta</h1>
+        </div>
+        <div class="seccion seccion-R-Animal border-panel sombra">
+
+            <center>
+                <div class="border-panel conjunto-registrar">
+                    <form action="ScriptDieta.php" method="post">
+                        <select class="text-pequeno center-text tamano-cajas" name="dieta" onChange="combo(this, 'theinput')">
+                            <?php foreach ($ts as $data1): ?>     
+                            <option ><?php echo $data1['ID_DIETA']; ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                        <button class="center-text sombra boton-pequeno" type="submit" name="buscarEliminar" class="fuente">Consultar</button>
+                    </form>
+                </div>
+                <form action="ScriptDieta.php" method="post">
+                    <table class="fuente tabla" border="0" cellspacing="0">
+                        <tr class="titulo-tablas text-color-white">
+                            <td class="cajas-tablas" width="70px">
+                        <center>
+                            <label class="text-pequeno">Nombre</label>
+                        </center>
+                        </td>
+                        <td class="cajas-tablas">
+                        <center>
+                            <label class="text-pequeno">Descripción</label>
+                        </center>
+                        </td>
+                        </tr>
+                        <?php if ($ts1 == null): ?>
+                        <tr class="color-filas-impares">
+                            <td class="cajas-tablas" width="50px">
+                        <center>
+                            <label class="text-pequeno"></label>
+                        </center>
+                        </td>
+                        <td class="cajas-tablas">
+                        <center>
+                            <label class="text-pequeno"></label>
+                        </center>
+                        </td>
+                        </tr>
+                        <?php else: ?>
+                        <?php  foreach ($ts1 as $data): ?>
+                        <tr class="color-filas-impares">
+                            <td class="cajas-tablas" width="50px">
+                        <center>
+                            <input type="hidden" name="nombre" class="text-pequeno center-text tamano-cajas" value="<?php  echo $data['ID_DIETA']; ?>" />    <?php  echo $data['ID_DIETA']; ?>
+                        </center>
+                        </td>
+                        <td class="cajas-tablas">
+                        <center>
+                            <label class="text-pequeno"> <?php  echo $data['DESCRIPCION'] ?></label>
+                        </center>
+                        </td>
+                        </tr>
+                        <?php endforeach ?>
+                        <?php endif; ?>  
+                    </table>
+                    <button class="center-text sombra boton" type="submit" name="eliminar" class="fuente">Eliminar</button>
+                </form>
+            </center>
+            </form>
+        </div>
+    </div>
+</section>

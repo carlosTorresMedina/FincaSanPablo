@@ -1,0 +1,40 @@
+<section>
+    <div class="seccion fuente">
+        <div class="titulo-secciones border-panel center-text sombra">
+            <h1>Consultar Dieta</h1>
+        </div>
+        <div class="seccion seccion-R-Animal border-panel sombra">
+            <center>
+                <table class="fuente tabla" border="0" cellspacing="0">
+                    <tr class="titulo-tablas text-color-white">
+                        <td class="cajas-tablas" width="70px">
+                    <center>
+                        <label class="text-pequeno">Nombre</label>
+                    </center>
+                    </td>
+                    <td class="cajas-tablas">
+                    <center>
+                        <label class="text-pequeno">Descripción</label>
+                    </center>
+                    </td>
+                    </tr>
+                    <?php  foreach ($ts as $data): ?>
+                    <tr class="color-filas-impares">
+                        <td class="cajas-tablas" width="50px">
+                    <center>
+                        <label class="text-pequeno"> <?php  echo $data['ID_DIETA']; ?></label>
+                    </center>
+                    </td>
+                    <td class="cajas-tablas">
+                    <center>
+                        <label class="text-pequeno">  <?php  echo $data['DESCRIPCION']; ?></label>
+                    </center>
+                    </td>
+                    </tr>
+                    <?php  endforeach ?>
+                </table>
+            </center>
+        </div>
+
+    </div>
+</section>

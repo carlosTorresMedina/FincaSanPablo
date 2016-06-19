@@ -1,0 +1,90 @@
+<section>
+    <div class="seccion fuente">
+        <div class="titulo-secciones border-panel center-text sombra">
+            <h1 >Eliminar Medicamentos</h1>
+        </div>
+    </div>
+    <div class="seccion seccion-R-Animal border-panel sombra">
+        <div class="conjunto-registrar">
+            <center>
+                <form action="ScriptMedicamento.php" method="post">
+                    <select class="text-pequeno center-text tamano-cajas" name="medicamento" onChange="combo(this, 'theinput')">
+                        <?php if ($ts == null): ?>
+                        <option >ninguno</option>
+                        <?php else: ?>
+                        <?php foreach ($ts as $data1): ?>     
+                        <option ><?php echo $data1['nombre']; ?></option>
+                        <?php endforeach; ?>
+                        <?php endif; ?>  
+                    </select>
+
+                    <button class="center-text sombra boton-pequeno" type="submit" name="buscarEliminar" class="fuente">Consultar</button>	 
+                </form>
+                <table class="fuente tabla" border="0" cellspacing="0">
+                    <form action='ScriptMedicamento.php' method="post">
+                        <tr class="titulo-tablas text-color-white">
+                            <td class="cajas-tablas">
+                        <center>
+                            <label class="text-pequeno">Nombre</label>
+                        </center>
+                        </td>
+                        <td class="cajas-tablas">
+                        <center>
+                            <label class="text-pequeno">Cantidad Existente</label>
+                        </center>
+                        </td>
+                        <td class="cajas-tablas">
+                        <center>
+                            <label class="text-pequeno">Cantidad Utilizada</label>
+                        </center>
+                        </td>
+
+                        </tr>
+
+                        <tr class="color-filas-impares">
+                            <?php if ($ts1 == null): ?>
+                            <td><center>
+                            <label class="text-pequeno"></label>
+                        </center>
+                        </td>
+                        <td><center>
+                            <label class="text-pequeno"></label>
+                        </center>
+                        </td>
+                        <td><center>
+                            <label class="text-pequeno"></label>
+                        </center>
+                        </td>
+                        <?php else: ?>
+                        <?php foreach ($ts1 as $data): ?>
+                        <td><center>
+                            <input type="hidden" name="nombre" class="text-pequeno center-text tamano-cajas" value='<?php echo $data["nombre"]; ?>'> <?php echo $data['nombre']; ?></input>
+                        </center>
+                        </td>
+                        <td><center>
+                            <label class="text-pequeno"><?php echo $data['cantida_existente']; ?> </label>
+                        </center>
+                        </td>
+                        <td><center>
+                            <label class="text-pequeno"><?php echo $data['cantidad_utilizada']; ?></label>
+                        </center>
+                        </td>
+                        <?php endforeach; ?>
+                        <?php endif; ?>  
+                        </tr>
+                </table> 
+                <div>
+                    <center>
+                        <button class="center-text sombra boton" type="submit" name="eliminar" class="fuente">Eliminar</button>
+                    </center>
+
+
+                </div>
+                </form>
+
+            </center> 
+
+        </div>
+
+    </div>
+</section>

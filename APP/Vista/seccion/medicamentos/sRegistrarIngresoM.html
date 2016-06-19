@@ -1,0 +1,41 @@
+<section>
+    <div class="seccion fuente">
+        <div class="titulo-secciones border-panel center-text sombra">
+            <h1 >Registrar ingreso de Medicamento</h1>
+        </div>
+    </div>
+    <div class="seccion seccion-R-Animal border-panel sombra fuente">
+        <form action="ScriptMedicamento.php" method="post">
+
+            <div class="border-panel conjunto-registrar">
+                <table>
+                    <tr>
+                        <td>
+                            <label class="text-pequeno  tamano-cajas">Medicamento</label>
+                        </td>
+                        <td>                                
+                            <select class="text-pequeno center-text tamano-cajas" name="medicamento" onChange="combo(this, 'theinput')">
+                                <?php foreach ($ts as $data1): ?>     
+                                <option ><?php echo $data1['nombre']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="text-pequeno tamano-cajas">Registrar Ingreso</label>
+                        </td>
+                        <td>
+                            <input type="text"name="Ingreso" class="text-pequeno center-text tamano-cajas"/>
+                        </td>
+                    </tr>                    
+                </table>               
+            </div>
+            <div>
+                <center>
+                    <button class="center-text sombra boton" type="submit" name="ingresar" class="fuente">Registrar</button>
+                </center>
+            </div>
+        </form>
+    </div>
+</section>

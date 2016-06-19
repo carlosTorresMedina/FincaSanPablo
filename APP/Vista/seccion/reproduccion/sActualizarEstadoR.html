@@ -1,0 +1,98 @@
+<section>
+    <div class="seccion fuente">
+        <div class="titulo-secciones border-panel center-text sombra">
+            <h1>Actualizar estado de la vaca en el proceso</h1>
+        </div>
+        <div class="seccion seccion-R-Animal border-panel sombra">
+            <center>
+                <table>
+                    <tr>
+                    <form action='ScriptReproduccion.php' method='post'> 
+                        <td>
+                            <label class="text-pequeno  tamano-cajas">Vaca</label>
+                        </td>
+                        <td>
+                            <select class="text-pequeno center-text tamano-cajas" name="nombre" onChange="combo(this, 'theinput')">
+                                <option >ninguno</option>
+                                <?php foreach ($ts as $data1): ?>     
+                                <option ><?php echo $data1['ID']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </td>
+                        <td>
+                            <button class="center-text sombra boton-pequeno" type="submit" name="buscarVacaEstado" class="fuente">Consultar</button>       
+                        </td>
+                    </form>
+                    </tr>
+                </table>   
+                <div class="border-panel conjunto-registrar">
+                    <table>
+
+                        <form action='ScriptReproduccion.php' method="post">
+                            <?php if ($ts1 == null): ?>
+                            <tr>
+                                <td>
+                                    <label class="text-pequeno  tamano-cajas">id de la vaca</label>
+                                </td>
+                                <td>
+                                    <input type="hidden" name="idVaca" class="text-pequeno center-text tamano-cajas" value=''> </input>
+                                </td>
+
+                            </tr> 
+                            <tr>
+                                <td>
+                                    <label class="text-pequeno  tamano-cajas">Nuevo estado</label>
+                                </td>
+                                <td>
+                                    <select class="text-pequeno center-text tamano-cajas" name="estado" onChange="combo(this, 'theinput')">
+
+                                        <option ></option>
+
+                                    </select>
+                                </td>
+                            </tr>
+                            <?php else: ?>
+                            <?php foreach ($ts1 as $data1): ?> 
+                            <tr>
+                                <td>
+                                    <label class="text-pequeno  tamano-cajas">id de la vaca</label>
+                                </td>
+                                <td>
+                                    <input type="hidden" name="idVaca" class="text-pequeno center-text tamano-cajas" value='<?php echo $data1["ID"]; ?>'> <?php echo $data1['ID']; ?></input>
+                                </td>
+
+                            </tr> 
+                            <tr>
+                                <td>
+                                    <label class="text-pequeno  tamano-cajas">Nuevo estado</label>
+                                </td>
+                                <td>
+                                    <select class="text-pequeno center-text tamano-cajas" name="estado" onChange="combo(this, 'theinput')">
+                                        <?php if( $data1['ESTADO']!='ninguno')
+                                        echo " <option >".$data1['ESTADO']." </option>";
+                                        ?>
+
+                                        <option>ninguno</option>
+                                    </select>
+                                </td>
+                            </tr> 
+                            <?php endforeach; ?>
+                            <?php endif; ?>
+                            <tr>
+                                <td colspan="3">
+                            <center>
+                                <button class="center-text sombra boton" type="submit" name="actualizar" class="fuente">Actualizar</button>
+                            </center>
+
+                            </td></tr>
+                        </form>
+                    </table>                 
+
+
+                </div>
+
+
+            </center>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,86 @@
+<section>
+    <div class="seccion fuente">
+        <div class="titulo-secciones border-panel center-text sombra">
+            <h1 >Registrar Animales</h1>
+        </div>
+        <div class="seccion seccion-R-Animal border-panel sombra">
+            <form action="ScriptAnimal.php" method="post">
+
+                <div class="border-panel conjunto-registrar">
+                    <table>
+                        <tr>
+                            <td>
+                                <label class="text-pequeno  tamano-cajas">Especie</label>
+                            </td>
+                            <td>
+                                <select class="text-pequeno center-text tamano-cajas" name="especie" onChange="combo(this, 'theinput')">
+                                    <option >vaca</option>
+                                    <option >camuro</option>
+                                    <option >equino</option>
+                                    <option >vacuno en crecimiento</option>
+
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="text-pequeno tamano-cajas">ID animal</label>
+                            </td>
+                            <td>
+                                <input type="text"name="idAnimal" class="text-pequeno center-text tamano-cajas"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="text-pequeno tamano-cajas">Tamaño</label>
+                            </td>
+                            <td>
+                                <input type="number" step="0.1" name="Tamano" maxlength="4" class="text-pequeno center-text tamano-cajas"/>
+                                <label class="text-pequeno tamano-cajas">m</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="text-pequeno tamano-cajas">Peso</label>
+                            </td>
+                            <td>
+                                <input type="number" name="Peso" step="0.1" maxlength="4" class="text-pequeno center-text tamano-cajas"/>
+                                <label class="text-pequeno tamano-cajas">kgs</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="text-pequeno tamano-cajas">Sexo</label>
+                            </td>
+                            <td>
+                                <select class="text-pequeno center-text tamano-cajas" name="sexo" onChange="combo(this, 'theinput')">
+                                    <option >Hembra</option>
+                                    <option >Macho</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="text-pequeno tamano-cajas">Medicamento</label>
+                            </td>
+                            <td>
+                                <select class="text-pequeno center-text tamano-cajas" name="medicamento" onChange="combo(this, 'theinput')">
+                                    <?php foreach ($ts2 as $data1): ?>     
+                                    <option ><?php echo $data1['nombre']; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>                 
+
+
+                </div>
+                <div>
+                    <center>
+                        <button class="center-text sombra boton" type="submit" name="registrar" class="fuente">Registrar</button>
+                    </center>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

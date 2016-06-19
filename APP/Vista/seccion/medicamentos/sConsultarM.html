@@ -1,0 +1,47 @@
+<section>
+    <div class="seccion fuente">
+        <div class="titulo-secciones border-panel center-text sombra">
+            <h1>Consultar Medicamentos</h1>
+        </div>
+    </div>
+    <div class="seccion seccion-R-Animal border-panel sombra">
+        <center>
+            <table class="fuente tabla" border="0" cellspacing="0">
+                <tr class="titulo-tablas text-color-white">
+                    <td class="cajas-tablas">
+                <center>
+                    <label class="text-pequeno">Nombre</label>
+                </center>
+                </td>
+                <td class="cajas-tablas">
+                <center>
+                    <label class="text-pequeno">Cantidad Existente</label>
+                </center>
+                </td>
+                <td class="cajas-tablas">
+                <center>
+                    <label class="text-pequeno">Cantidad Utilizada</label>
+                </center>
+                </td>
+
+                </tr>
+                <?php  foreach ($ts as $data): ?>   
+                <tr class="color-filas-impares">
+                    <td><center>
+                    <label class="text-pequeno"><?php echo $data['nombre']; ?></label>
+                </center>
+                </td>
+                <td><center>
+                    <label class="text-pequeno"><?php echo $data['cantida_existente']; ?></label>
+                </center>
+                </td>
+                <td><center>
+                    <label class="text-pequeno"><?php echo $data['cantidad_utilizada']; ?></label>
+                </center>
+                </td>
+                </tr>
+                <?php endforeach; ?>
+            </table>
+        </center>
+    </div>
+</section>
